@@ -1,0 +1,49 @@
+{
+  "targets": {
+    "token": {
+      "outFile": "build/MytxoToken.wasm",
+      "use": ["abort=src/token/index/abort"]
+    },
+    "presale": {
+      "outFile": "build/MytxoPresale.wasm",
+      "use": ["abort=src/presale/index/abort"]
+    },
+    "factory": {
+      "outFile": "build/MyTXOFactory.wasm",
+      "use": ["abort=src/factory/index/abort"]
+    },
+    "profile": {
+      "outFile": "build/MyTXOProfile.wasm",
+      "use": ["abort=src/profile/index/abort"]
+    },
+    "social": {
+      "outFile": "build/MyTXOSocial.wasm",
+      "use": ["abort=src/social/index/abort"]
+    },
+    "faucet": {
+      "outFile": "build/MytxoFaucet.wasm",
+      "use": ["abort=src/faucet/index/abort"]
+    }
+  },
+  "options": {
+    "sourceMap": false,
+    "optimizeLevel": 3,
+    "shrinkLevel": 1,
+    "converge": true,
+    "noAssert": false,
+    "enable": [
+      "sign-extension",
+      "mutable-globals",
+      "nontrapping-f2i",
+      "bulk-memory",
+      "simd",
+      "reference-types",
+      "multi-value"
+    ],
+    "runtime": "stub",
+    "memoryBase": 0,
+    "initialMemory": 1,
+    "exportStart": "start",
+    "transform": "@btc-vision/opnet-transform"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@mytxo/opnet-contracts",
+  "version": "0.1.0",
+  "description": "MyTXO OP_NET smart contracts (token, presale, registry, social)",
+  "type": "module",
+  "scripts": {
+    "build:token": "asc src/token/index.ts --target token --measure --uncheckedBehavior never",
+    "build:presale": "asc src/presale/index.ts --target presale --measure --uncheckedBehavior never",
+    "build:factory": "asc src/factory/index.ts --target factory --measure --uncheckedBehavior never",
+    "build:profile": "asc src/profile/index.ts --target profile --measure --uncheckedBehavior never",
+    "build:social": "asc src/social/index.ts --target social --measure --uncheckedBehavior never",
+    "build:faucet": "asc src/faucet/index.ts --target faucet --measure --uncheckedBehavior never",
+    "build": "npm run build:token && npm run build:presale && npm run build:factory && npm run build:profile && npm run build:social && npm run build:faucet",
+    "test": "asp --config as-pect.config.js --verbose --no-logo"
+  },
+  "dependencies": {
+    "@assemblyscript/loader": "^0.28.9",
+    "@btc-vision/as-bignum": "^0.1.2",
+    "@btc-vision/assemblyscript": "^0.29.2",
+    "@btc-vision/btc-runtime": "^1.11.0-rc.10",
+    "@btc-vision/opnet-transform": "^1.2.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@btc-vision/as-pect-assembly": "^8.2.0",
+    "@btc-vision/as-pect-cli": "^8.2.0",
+    "@btc-vision/as-pect-transform": "^8.2.0",
+    "@types/node": "^25.3.0"
+  }
+}
