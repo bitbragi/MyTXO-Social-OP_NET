@@ -154,7 +154,7 @@ OPNet Testnet RPC: `https://testnet.opnet.org`
 
 ## License
 
-All rights reserved. Copyright 2025-2026 MyTXO.
+MIT.
 
 Source code is provided for hackathon evaluation purposes. See the live demo for the full platform experience.
 
