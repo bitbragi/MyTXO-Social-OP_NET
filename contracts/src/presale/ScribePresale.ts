@@ -40,7 +40,7 @@ const contributionsPointer: u16 = Blockchain.nextPointer;
 const treasuryBtcAddressPointer: u16 = Blockchain.nextPointer;
 
 /**
- * MytxoPresale - Native BTC presale contract for MYTXO tokens on OP_NET.
+ * ScribePresale - Native BTC presale contract for SCRIBE tokens on OP_NET.
  *
  * Users send BTC to the owner/treasury address as part of the transaction.
  * The contract verifies the BTC output exists, enforces caps, and transfers
@@ -50,7 +50,7 @@ const treasuryBtcAddressPointer: u16 = Blockchain.nextPointer;
  * don't hold BTC. The BTC goes directly to the owner's Bitcoin address.
  */
 @final
-export class MytxoPresale extends ReentrancyGuard {
+export class ScribePresale extends ReentrancyGuard {
     private readonly owner: StoredAddress;
     private readonly tokenAddress: StoredAddress;
     private readonly tokensPerSat: StoredU256;

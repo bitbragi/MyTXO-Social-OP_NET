@@ -1,8 +1,9 @@
 node_modules/
 build/
+dist/
 .env
-.env.local
-.env.production
 *.wasm
+*.wat
+*.log
 .DS_Store
-*.tsbuildinfo
+package-lock.json

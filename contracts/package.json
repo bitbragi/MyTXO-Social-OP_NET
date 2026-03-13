@@ -1,7 +1,7 @@
 {
-  "name": "@mytxo/opnet-contracts",
-  "version": "0.1.0",
-  "description": "MyTXO OP_NET smart contracts (token, presale, registry, social)",
+  "name": "@myscribe/smart-contracts",
+  "version": "1.0.0",
+  "description": "MyScribe smart contracts — social identity, DeFi, and NFT marketplace on Bitcoin L1",
   "type": "module",
   "scripts": {
     "build:token": "asc src/token/index.ts --target token --measure --uncheckedBehavior never",
@@ -10,8 +10,11 @@
     "build:profile": "asc src/profile/index.ts --target profile --measure --uncheckedBehavior never",
     "build:social": "asc src/social/index.ts --target social --measure --uncheckedBehavior never",
     "build:faucet": "asc src/faucet/index.ts --target faucet --measure --uncheckedBehavior never",
-    "build": "npm run build:token && npm run build:presale && npm run build:factory && npm run build:profile && npm run build:social && npm run build:faucet",
-    "test": "asp --config as-pect.config.js --verbose --no-logo"
+    "build:rewards": "asc src/rewards/index.ts --target rewards --measure --uncheckedBehavior never",
+    "build:governance": "asc src/governance/index.ts --target governance --measure --uncheckedBehavior never",
+    "build:marketplace": "asc src/marketplace/index.ts --target marketplace --measure --uncheckedBehavior never",
+    "build:collection": "asc src/collection/index.ts --target collection --measure --uncheckedBehavior never",
+    "build": "npm run build:token && npm run build:presale && npm run build:factory && npm run build:profile && npm run build:social && npm run build:faucet && npm run build:rewards && npm run build:governance && npm run build:marketplace && npm run build:collection"
   },
   "dependencies": {
     "@assemblyscript/loader": "^0.28.9",
@@ -20,11 +23,5 @@
     "@btc-vision/btc-runtime": "^1.11.0-rc.10",
     "@btc-vision/opnet-transform": "^1.2.0",
     "typescript": "^5.9.3"
-  },
-  "devDependencies": {
-    "@btc-vision/as-pect-assembly": "^8.2.0",
-    "@btc-vision/as-pect-cli": "^8.2.0",
-    "@btc-vision/as-pect-transform": "^8.2.0",
-    "@types/node": "^25.3.0"
   }
 }

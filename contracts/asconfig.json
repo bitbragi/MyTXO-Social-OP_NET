@@ -1,28 +1,42 @@
 {
   "targets": {
     "token": {
-      "outFile": "build/MytxoToken.wasm",
+      "outFile": "build/ScribeToken.wasm",
       "use": ["abort=src/token/index/abort"]
     },
     "presale": {
-      "outFile": "build/MytxoPresale.wasm",
+      "outFile": "build/ScribePresale.wasm",
       "use": ["abort=src/presale/index/abort"]
     },
     "factory": {
-      "outFile": "build/MyTXOFactory.wasm",
+      "outFile": "build/MyScribeFactory.wasm",
       "use": ["abort=src/factory/index/abort"]
     },
     "profile": {
-      "outFile": "build/MyTXOProfile.wasm",
+      "outFile": "build/MyScribeProfile.wasm",
       "use": ["abort=src/profile/index/abort"]
     },
     "social": {
-      "outFile": "build/MyTXOSocial.wasm",
+      "outFile": "build/MyScribeSocial.wasm",
       "use": ["abort=src/social/index/abort"]
     },
     "faucet": {
-      "outFile": "build/MytxoFaucet.wasm",
+      "outFile": "build/ScribeFaucet.wasm",
       "use": ["abort=src/faucet/index/abort"]
+    },
+    "rewards": {
+      "outFile": "build/ScribeRewards.wasm",
+      "use": ["abort=src/rewards/index/abort"]
+    },
+    "governance": {
+      "outFile": "build/ScribeGovernance.wasm",
+      "use": ["abort=src/governance/index/abort"]
+    },
+    "marketplace": {
+      "outFile": "build/MyScribeMarketplace.wasm"
+    },
+    "collection": {
+      "outFile": "build/MyScribeCollection.wasm"
     }
   },
   "options": {

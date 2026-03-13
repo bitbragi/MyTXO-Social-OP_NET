@@ -1,0 +1,14 @@
+{
+  "name": "@myscribe/opnet-scripts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deployment and wallet scripts for MyScribe on OP_NET",
+  "type": "module",
+  "dependencies": {
+    "@btc-vision/bitcoin": "^7.0.0-rc.6",
+    "@btc-vision/ecpair": "^4.0.5",
+    "@btc-vision/transaction": "^1.8.0-rc.9",
+    "dotenv": "^17.3.1",
+    "opnet": "^1.8.1-rc.14"
+  }
+}

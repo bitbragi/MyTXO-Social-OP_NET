@@ -1,9 +1,9 @@
 import { Blockchain } from '@btc-vision/btc-runtime/runtime';
 import { revertOnError } from '@btc-vision/btc-runtime/runtime/abort/abort';
-import { MytxoPresale } from './MytxoPresale';
+import { ScribePresale } from './ScribePresale';
 
 Blockchain.contract = () => {
-    return new MytxoPresale();
+    return new ScribePresale();
 };
 
 export * from '@btc-vision/btc-runtime/runtime/exports';

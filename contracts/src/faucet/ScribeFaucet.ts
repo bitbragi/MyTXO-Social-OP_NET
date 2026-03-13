@@ -37,22 +37,22 @@ const registeredOnlyPointer: u16 = Blockchain.nextPointer;
 const lastClaimPointer: u16 = Blockchain.nextPointer;
 
 /**
- * MytxoFaucet — token drip faucet for $MYTXO on OPNet.
+ * ScribeFaucet — token drip faucet for $SCRIBE on OPNet.
  *
  * Any wallet can call claim() once per cooldown window to receive a fixed
- * amount of MYTXO. The faucet is funded by anyone sending OP20 MYTXO tokens
+ * amount of SCRIBE. The faucet is funded by anyone sending OP20 SCRIBE tokens
  * directly to this contract's address via a standard token transfer.
  *
  * Owner controls:
  *   - setClaimAmount(u256)    — adjust tokens per claim (18-decimal scaled)
  *   - setCooldownBlocks(u256) — adjust cooldown window (36 blocks ≈ 6 hours)
- *   - setRegisteredOnly(bool) — restrict claims to registered MyTXO profiles
+ *   - setRegisteredOnly(bool) — restrict claims to registered MyScribe profiles
  *   - pause() / unpause()     — emergency stop
  * Tokens sent to this contract can only exit via claims — there is no drain function.
  * The faucet is permanently trustless once funded.
  */
 @final
-export class MytxoFaucet extends ReentrancyGuard {
+export class ScribeFaucet extends ReentrancyGuard {
     private readonly owner: StoredAddress;
     private readonly tokenAddress: StoredAddress;
     private readonly registryAddress: StoredAddress;
@@ -177,7 +177,7 @@ export class MytxoFaucet extends ReentrancyGuard {
 
     /**
      * setClaimAmount(amount) — owner only. Update the per-claim token amount.
-     * Amount must be 18-decimal scaled (e.g. 1000 × 10^18 for 1,000 MYTXO).
+     * Amount must be 18-decimal scaled (e.g. 1000 × 10^18 for 1,000 SCRIBE).
      */
     @method({ name: 'amount', type: ABIDataTypes.UINT256 })
     public setClaimAmount(calldata: Calldata): BytesWriter {
@@ -207,7 +207,7 @@ export class MytxoFaucet extends ReentrancyGuard {
 
     /**
      * setRegisteredOnly(enabled) — owner only.
-     * When true, only wallets with a registered MyTXO profile can claim.
+     * When true, only wallets with a registered MyScribe profile can claim.
      */
     @method({ name: 'enabled', type: ABIDataTypes.BOOL })
     public setRegisteredOnly(calldata: Calldata): BytesWriter {
@@ -233,7 +233,7 @@ export class MytxoFaucet extends ReentrancyGuard {
     }
 
     /**
-     * fund(amount) — anyone can donate MYTXO to keep the faucet running.
+     * fund(amount) — anyone can donate SCRIBE to keep the faucet running.
      *
      * Pulls `amount` tokens from the caller into this contract via safeTransferFrom.
      * This is the correct way to send tokens to a contract on OPNet — direct wallet

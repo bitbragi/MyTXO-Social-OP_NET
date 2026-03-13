@@ -48,16 +48,16 @@ const contractToOwnerPointer: u16 = Blockchain.nextPointer;
 const addressToUsernamePointer: u16 = Blockchain.nextPointer;
 
 /**
- * MyTXOFactory — Global username registry and profile contract directory.
+ * MyScribeFactory — Global username registry and profile contract directory.
  *
  * Maps usernames to per-user profile contract addresses and wallet addresses
  * to their deployed profile contracts. Each user deploys their own OP721
- * MyTXOProfile contract, then calls register() here to claim their username.
+ * MyScribeProfile contract, then calls register() here to claim their username.
  *
  * All lookups are O(1) via StoredMapU256 — scales to unlimited users.
  */
 @final
-export class MyTXOFactory extends ReentrancyGuard {
+export class MyScribeFactory extends ReentrancyGuard {
     private readonly owner: StoredAddress;
     private readonly profileCount: StoredU256;
     private readonly usernameToContract: StoredMapU256;

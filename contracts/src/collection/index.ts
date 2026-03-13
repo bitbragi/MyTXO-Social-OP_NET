@@ -1,9 +1,9 @@
 import { Blockchain } from '@btc-vision/btc-runtime/runtime';
 import { revertOnError } from '@btc-vision/btc-runtime/runtime/abort/abort';
-import { MyScribeSocial } from './MyScribeSocial';
+import { MyScribeCollection } from './MyScribeCollection';
 
-Blockchain.contract = () => {
-    return new MyScribeSocial();
+Blockchain.contract = (): MyScribeCollection => {
+    return new MyScribeCollection();
 };
 
 export * from '@btc-vision/btc-runtime/runtime/exports';

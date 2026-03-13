@@ -126,7 +126,7 @@ const bgTxidPointer: u16 = Blockchain.nextPointer;
 const bgIdxPointer: u16 = Blockchain.nextPointer;
 
 /**
- * MyTXOSocial — Social interactions for the MyTXO platform.
+ * MyScribeSocial — Social interactions for the MyScribe platform.
  *
  * Manages:
  * - MySpace-style bidirectional friendships (send/accept/deny/remove)
@@ -137,7 +137,7 @@ const bgIdxPointer: u16 = Blockchain.nextPointer;
  * Re-NFTs: one per user per content hash. Enumerable per-content and per-user.
  */
 @final
-export class MyTXOSocial extends ReentrancyGuard {
+export class MyScribeSocial extends ReentrancyGuard {
     private readonly owner: StoredAddress;
     private readonly friendCounts: AddressMemoryMap;
     private readonly pendingInCounts: AddressMemoryMap;
@@ -439,6 +439,14 @@ export class MyTXOSocial extends ReentrancyGuard {
     @method(
         { name: 'myProfile', type: ABIDataTypes.ADDRESS },
         { name: 'count', type: ABIDataTypes.UINT256 },
+        { name: 'addr0', type: ABIDataTypes.ADDRESS },
+        { name: 'addr1', type: ABIDataTypes.ADDRESS },
+        { name: 'addr2', type: ABIDataTypes.ADDRESS },
+        { name: 'addr3', type: ABIDataTypes.ADDRESS },
+        { name: 'addr4', type: ABIDataTypes.ADDRESS },
+        { name: 'addr5', type: ABIDataTypes.ADDRESS },
+        { name: 'addr6', type: ABIDataTypes.ADDRESS },
+        { name: 'addr7', type: ABIDataTypes.ADDRESS },
     )
     @returns({ name: 'success', type: ABIDataTypes.BOOL })
     public setTop8(calldata: Calldata): BytesWriter {
